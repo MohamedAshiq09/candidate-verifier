@@ -1,0 +1,113 @@
+{
+  "candidateFields": [
+    {
+      "id": "fullName",
+      "label": "Full Name",
+      "type": "text",
+      "required": true,
+      "validation": "name"
+    },
+    {
+      "id": "email",
+      "label": "Email Address",
+      "type": "email",
+      "required": true,
+      "validation": "email"
+    },
+    {
+      "id": "phone",
+      "label": "Phone Number",
+      "type": "tel",
+      "required": true,
+      "validation": "phone"
+    },
+    {
+      "id": "experience",
+      "label": "Years of Experience",
+      "type": "number",
+      "required": true,
+      "validation": "number",
+      "min": 0,
+      "max": 50
+    },
+    {
+      "id": "skills",
+      "label": "Technical Skills",
+      "type": "text",
+      "required": true,
+      "validation": "skills",
+      "placeholder": "React, Node.js, TypeScript..."
+    },
+    {
+      "id": "education",
+      "label": "Highest Education",
+      "type": "select",
+      "required": true,
+      "options": [
+        "High School",
+        "Bachelor's Degree",
+        "Master's Degree",
+        "PhD",
+        "Bootcamp/Certification"
+      ]
+    },
+    {
+      "id": "currentCompany",
+      "label": "Current Company",
+      "type": "text",
+      "required": false,
+      "validation": "text"
+    },
+    {
+      "id": "linkedinUrl",
+      "label": "LinkedIn Profile URL",
+      "type": "url",
+      "required": false,
+      "validation": "url"
+    }
+  ],
+  "additionalQuestions": [
+    {
+      "id": "availability",
+      "question": "When can you start?",
+      "type": "select",
+      "options": ["Immediately", "2 weeks notice", "1 month", "More than 1 month"],
+      "required": true
+    },
+    {
+      "id": "salaryExpectation",
+      "question": "Expected salary range (USD/year)?",
+      "type": "select",
+      "options": ["30k-50k", "50k-70k", "70k-100k", "100k-150k", "150k+"],
+      "required": true
+    },
+    {
+      "id": "remoteWork",
+      "question": "Are you open to remote work?",
+      "type": "radio",
+      "options": ["Yes", "No", "Hybrid preferred"],
+      "required": true
+    },
+    {
+      "id": "motivation",
+      "question": "Why are you interested in this position?",
+      "type": "textarea",
+      "required": true,
+      "maxLength": 500
+    }
+  ],
+  "verificationRules": {
+    "email": {
+      "checkDomain": true,
+      "allowedDomains": ["gmail.com", "yahoo.com", "outlook.com", "hotmail.com"],
+      "blockTempEmail": true
+    },
+    "skills": {
+      "requiredSkills": ["React", "JavaScript", "TypeScript"],
+      "bonusSkills": ["Node.js", "Next.js", "Python", "AWS", "Docker"]
+    },
+    "experience": {
+      "minimumYears": 1
+    }
+  }
+}
