@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
 
@@ -9,7 +9,11 @@ export const metadata: Metadata = {
   description: 'Advanced recruitment verification platform',
   keywords: 'recruitment, verification, candidate, hiring, HR',
   authors: [{ name: 'Your Name' }],
-  viewport: 'width=device-width, initial-scale=1',
+}
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
 }
 
 export default function RootLayout({

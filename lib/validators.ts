@@ -100,7 +100,8 @@ export const validateCandidateData = (data: CandidateData): {
     errors.push('Please enter a valid phone number')
   }
   
-  if (data.experience < 0 || data.experience > 50) {
+  const experienceNum = typeof data.experience === 'number' ? data.experience : Number(data.experience)
+  if (isNaN(experienceNum) || experienceNum < 0 || experienceNum > 50) {
     errors.push('Experience must be between 0 and 50 years')
   }
   

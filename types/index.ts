@@ -2,11 +2,13 @@ export interface CandidateData {
   fullName: string
   email: string
   phone: string
-  experience: number
+  experience: string
   skills: string
   education: string
   currentCompany?: string
   linkedinUrl?: string
+  name: string
+  address: string
 }
 
 export interface FieldConfig {
