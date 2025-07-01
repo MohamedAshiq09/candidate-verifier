@@ -14,34 +14,34 @@ A comprehensive web-based candidate verification system that simulates a real sc
 ### Application Screenshots
 
 #### 1. Initial Data Collection
-![Data Collection - Form View](/screenshots/01-data-collection-1.png)
+![Data Collection - Form View](./public/screenshots/01-data-collection-1.png)
 *Initial candidate information form interface*
 
-![Data Collection - JSON Upload](./screenshots/01-data-collection-2.png)
+![Data Collection - JSON Upload](./public/screenshots/01-data-collection-2.png)
 *JSON file upload option for pre-filled data*
 
-![Data Collection - Form Validation](./screenshots/01-data-collection-3.png)
+![Data Collection - Form Validation](./public/screenshots/01-data-collection-3.png)
 *Real-time form validation and error handling*
 
 #### 2. Field Verification Process
-![Field Verification](./screenshots/02-field-verification.png)
+![Field Verification](./public/screenshots/02-field-verification.png)
 *Real-time verification process with progress indicators*
 
 #### 3. Additional Questions
-![Additional Questions - Step 1](./screenshots/03-additional-questions-1.png)
+![Additional Questions - Step 1](./public/screenshots/03-additional-questions-1.png)
 *Step-by-step additional question collection interface*
 
-![Additional Questions - Step 2](./screenshots/03-additional-questions-2.png)
+![Additional Questions - Step 2](./public/screenshots/03-additional-questions-2.png)
 *Continuation of additional questions with different field types*
 
 #### 4. Verification Summary
-![Summary Report - Overview](./screenshots/04-summary-report-1.png)
+![Summary Report - Overview](./public/screenshots/04-summary-report-1.png)
 *Comprehensive verification report with scoring overview*
 
-![Summary Report - Details](./screenshots/04-summary-report-2.png)
+![Summary Report - Details](./public/screenshots/04-summary-report-2.png)
 *Detailed verification results and export functionality*
 
-![Summary Report - Details](./screenshots/04-summary-report-3.png)
+![Summary Report - Details](./public/screenshots/04-summary-report-3.png)
 *Detailed verification results and export functionality*
 
 *Note: Place your actual screenshots in a `screenshots/` folder in your repository root*
