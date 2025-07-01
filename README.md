@@ -14,7 +14,7 @@ A comprehensive web-based candidate verification system that simulates a real sc
 ### Application Screenshots
 
 #### 1. Initial Data Collection
-![Data Collection - Form View](./screenshots/01-data-collection-1.png)
+![Data Collection - Form View](/screenshots/01-data-collection-1.png)
 *Initial candidate information form interface*
 
 ![Data Collection - JSON Upload](./screenshots/01-data-collection-2.png)
