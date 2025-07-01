@@ -1,4 +1,3 @@
-// src/components/Summary.tsx
 'use client'
 import { useState } from 'react'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
@@ -79,7 +78,6 @@ export default function Summary({
     setIsSaving(true)
     
     try {
-      // Simulate API call to save application
       const applicationData: SavedApplication = {
         id: `app_${Date.now()}`,
         candidateData,
@@ -89,14 +87,11 @@ export default function Summary({
         status: verificationResult.status
       }
 
-      // Simulate network delay
       await new Promise(resolve => setTimeout(resolve, 2000))
-      
-      // Simulate successful save
+
       setSavedApplicationId(applicationData.id)
       setSaveSuccess(true)
-      
-      // Reset success state after 3 seconds
+   
       setTimeout(() => {
         setSaveSuccess(false)
       }, 3000)
@@ -141,7 +136,6 @@ export default function Summary({
 
   return (
     <div className="space-y-6">
-      {/* Overall Status Card */}
       <Card className={`border-2 ${getStatusColor(verificationResult.status)}`}>
         <CardHeader>
           <div className="flex items-center justify-between">
@@ -171,7 +165,6 @@ export default function Summary({
         </CardContent>
       </Card>
 
-      {/* Candidate Information */}
       <Card>
         <CardHeader>
           <CardTitle className="flex items-center space-x-2">
@@ -216,7 +209,6 @@ export default function Summary({
         </CardContent>
       </Card>
 
-      {/* Verification Results */}
       <Card>
         <CardHeader>
           <CardTitle className="flex items-center space-x-2">
@@ -249,7 +241,6 @@ export default function Summary({
         </CardContent>
       </Card>
 
-      {/* Additional Questions */}
       <Card>
         <CardHeader>
           <CardTitle className="flex items-center space-x-2">
@@ -271,7 +262,6 @@ export default function Summary({
         </CardContent>
       </Card>
 
-      {/* Actions */}
       <div className="flex flex-col sm:flex-row gap-4 justify-center">
         <Button 
           onClick={handleSave}
@@ -318,7 +308,6 @@ export default function Summary({
         </Button>
       </div>
 
-      {/* Save Success Message */}
       {saveSuccess && savedApplicationId && (
         <Card className="border-green-200 bg-green-50">
           <CardContent className="pt-6">
