@@ -9,7 +9,6 @@ A comprehensive web-based candidate verification system that simulates a real sc
 ### Working Demo
 📺 **Live Demo Video**: [YouTube Link](https://www.youtube.com/watch?v=90BI-0NnEtc)
 
-*Replace `YOUR_YOUTUBE_VIDEO_LINK` with your actual YouTube video URL*
 
 ### Application Screenshots
 
@@ -44,7 +43,6 @@ A comprehensive web-based candidate verification system that simulates a real sc
 ![Summary Report - Details](./public/screenshots/04-summary-report-3.png)
 *Detailed verification results and export functionality*
 
-*Note: Place your actual screenshots in a `screenshots/` folder in your repository root*
 
 ## 🎯 Objective
 
@@ -128,20 +126,32 @@ npm start
 ## 📁 File Structure
 
 ```
-├── components/
-│   ├── CandidateVerifier.tsx    # Initial data collection
-│   ├── FieldVerification.tsx    # Verification process
-│   ├── AdditionalQuestions.tsx  # Additional questions
-│   ├── Summary.tsx              # Final report
-│   └── ui/                      # UI components
-├── types/
-│   └── index.ts                 # TypeScript interfaces
-├── app/
-│   ├── page.tsx                 # Main application
-│   └── layout.tsx               # Root layout
-└── public/
-    └── sample-data/
-        └── input.json           # Sample input file
+candidate-verifier/
+│ ├── app/
+│ │ ├── globals.css # Global styles
+│ │ ├── layout.tsx # Root layout
+│ │ ├── page.tsx # Main entry page
+│ │ └── api/
+│ │ ├── verify/
+│ │ │ └── route.ts # API for verification
+│ │ └── save/
+│ │ └── route.ts # API for saving data
+│ ├── components/
+│ │ ├── ui/
+│ │ │ ├── button.tsx
+│ │ │ ├── card.tsx
+│ │ │ ├── input.tsx
+│ │ │ ├── label.tsx
+│ │ │ └── progress.tsx
+│ │ ├── CandidateVerifier.tsx
+│ │ ├── FieldVerification.tsx
+│ │ ├── AdditionalQuestions.tsx
+│ │ └── Summary.tsx
+│ ├── lib/
+│ │ ├── utils.ts # Helper functions
+│ │ └── validators.ts # Validation logic
+│ └── types/
+│ └── index.ts # Type definitions
 ```
 
 ## 📊 Input/Output Format
