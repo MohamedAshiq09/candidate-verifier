@@ -1,8 +1,7 @@
-// src/app/api/verify/route.ts
 import { NextRequest, NextResponse } from 'next/server'
 import { CandidateData, VerificationResult, FieldVerificationResult, VerificationRules } from '@/types'
 
-// Mock verification rules - in production, this would come from a database
+
 const DEFAULT_VERIFICATION_RULES: VerificationRules = {
   email: {
     checkDomain: true,
@@ -36,7 +35,6 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    // Simulate verification delay
     await new Promise(resolve => setTimeout(resolve, 2000))
 
     const verificationResults = await performVerification(candidateData, verificationRules)
@@ -62,31 +60,24 @@ async function performVerification(
 ): Promise<VerificationResult> {
   const fieldResults: FieldVerificationResult[] = []
 
-  // Email verification
   const emailResult = await verifyEmail(candidateData.email, rules.email)
   fieldResults.push(emailResult)
 
-  // Phone verification
   const phoneResult = await verifyPhone(candidateData.phone)
   fieldResults.push(phoneResult)
 
-  // Experience verification
   const experienceResult = await verifyExperience(candidateData.experience, rules.experience)
   fieldResults.push(experienceResult)
 
-  // Skills verification
   const skillsResult = await verifySkills(candidateData.skills, rules.skills)
   fieldResults.push(skillsResult)
 
-  // Education verification
   const educationResult = await verifyEducation(candidateData.education)
   fieldResults.push(educationResult)
 
-  // Address verification
   const addressResult = await verifyAddress(candidateData.address)
   fieldResults.push(addressResult)
 
-  // Calculate overall score and status
   const totalScore = fieldResults.reduce((sum, result) => sum + result.score, 0)
   const averageScore = totalScore / fieldResults.length
   
@@ -138,8 +129,7 @@ async function verifyEmail(email: string, rules: any): Promise<FieldVerification
     }
   }
 
-  // Simulate domain verification
-  const isDomainValid = Math.random() > 0.1 // 90% success rate
+  const isDomainValid = Math.random() > 0.1 
   
   if (!isDomainValid) {
     return {
@@ -174,8 +164,7 @@ async function verifyPhone(phone: string): Promise<FieldVerificationResult> {
     }
   }
 
-  // Simulate phone verification
-  const isPhoneValid = Math.random() > 0.05 // 95% success rate
+  const isPhoneValid = Math.random() > 0.05 
   
   if (!isPhoneValid) {
     return {
@@ -295,8 +284,7 @@ async function verifyEducation(education: string): Promise<FieldVerificationResu
     }
   }
 
-  // Simulate education verification
-  const isEducationValid = Math.random() > 0.15 // 85% success rate
+  const isEducationValid = Math.random() > 0.15 
   
   if (!isEducationValid) {
     return {
@@ -329,8 +317,7 @@ async function verifyAddress(address: string): Promise<FieldVerificationResult> 
     }
   }
 
-  // Simulate address verification
-  const isAddressValid = Math.random() > 0.1 // 90% success rate
+  const isAddressValid = Math.random() > 0.1 
   
   if (!isAddressValid) {
     return {

@@ -1,9 +1,6 @@
-// src/app/api/save/route.ts
 import { NextRequest, NextResponse } from 'next/server'
 import { CandidateData, VerificationResult, AdditionalAnswers, SavedApplication } from '@/types'
 
-// In-memory storage for demo purposes
-// In production, this would be a database
 const applications: SavedApplication[] = []
 
 export async function POST(request: NextRequest) {
@@ -17,10 +14,8 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    // Generate unique ID
     const id = generateUniqueId()
 
-    // Create saved application
     const savedApplication: SavedApplication = {
       id,
       candidateData,
@@ -30,10 +25,8 @@ export async function POST(request: NextRequest) {
       status: verificationResult.status
     }
 
-    // Save to storage (in-memory for demo)
     applications.push(savedApplication)
 
-    // Simulate save delay
     await new Promise(resolve => setTimeout(resolve, 1000))
 
     return NextResponse.json({
@@ -60,7 +53,6 @@ export async function GET(request: NextRequest) {
     const id = searchParams.get('id')
 
     if (id) {
-      // Get specific application
       const application = applications.find(app => app.id === id)
       
       if (!application) {
@@ -75,7 +67,6 @@ export async function GET(request: NextRequest) {
         data: application
       })
     } else {
-      // Get all applications
       return NextResponse.json({
         success: true,
         data: applications.sort((a, b) => 

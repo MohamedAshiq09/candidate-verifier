@@ -1,4 +1,3 @@
-// src/components/CandidateVerifier.tsx
 'use client'
 
 import { useState } from 'react'
@@ -112,7 +111,6 @@ export default function CandidateVerifier({ onSubmit, isLoading = false }: Candi
       [field]: value
     }))
 
-    // Clear error when user starts typing
     if (errors[field]) {
       setErrors(prev => ({
         ...prev,
@@ -133,7 +131,6 @@ export default function CandidateVerifier({ onSubmit, isLoading = false }: Candi
       }
 
       if (value) {
-        // Email validation
         if (field.type === 'email') {
           const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
           if (!emailRegex.test(value)) {
@@ -141,7 +138,6 @@ export default function CandidateVerifier({ onSubmit, isLoading = false }: Candi
           }
         }
 
-        // Phone validation
         if (field.type === 'tel') {
           const phoneRegex = /^[\+]?[1-9][\d]{0,15}$/
           if (!phoneRegex.test(value.replace(/\s|-|\(|\)/g, ''))) {
@@ -149,7 +145,6 @@ export default function CandidateVerifier({ onSubmit, isLoading = false }: Candi
           }
         }
 
-        // Number validation
         if (field.type === 'number') {
           const num = parseInt(value)
           if (isNaN(num)) {
@@ -161,7 +156,6 @@ export default function CandidateVerifier({ onSubmit, isLoading = false }: Candi
           }
         }
 
-        // URL validation
         if (field.type === 'url' && value) {
           try {
             new URL(value)
@@ -170,7 +164,6 @@ export default function CandidateVerifier({ onSubmit, isLoading = false }: Candi
           }
         }
 
-        // Minimum length validation
         if (field.type === 'text' && value.length < 2) {
           newErrors[field.id] = `${field.label} must be at least 2 characters`
         }
@@ -197,7 +190,6 @@ export default function CandidateVerifier({ onSubmit, isLoading = false }: Candi
         try {
           const jsonData = JSON.parse(e.target?.result as string)
           if (jsonData.fields) {
-            // Handle the format from the assignment
             setCandidateData(prev => ({
               ...prev,
               fullName: jsonData.fields.name || '',
@@ -212,7 +204,6 @@ export default function CandidateVerifier({ onSubmit, isLoading = false }: Candi
               linkedinUrl: jsonData.fields.linkedinUrl || ''
             }))
           } else {
-            // Handle direct candidate data format
             setCandidateData(prev => ({
               ...prev,
               ...jsonData
@@ -240,7 +231,6 @@ export default function CandidateVerifier({ onSubmit, isLoading = false }: Candi
       </CardHeader>
       <CardContent>
         <div className="space-y-6">
-          {/* JSON Upload Option */}
           <div className="border-2 border-dashed border-gray-300 rounded-lg p-4">
             <div className="text-center">
               <Upload className="w-8 h-8 mx-auto text-gray-400 mb-2" />
@@ -276,7 +266,6 @@ export default function CandidateVerifier({ onSubmit, isLoading = false }: Candi
             </div>
           </div>
 
-          {/* Manual Form */}
           <form onSubmit={handleSubmit} className="space-y-4">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {defaultFields.map((field) => (
@@ -321,7 +310,6 @@ export default function CandidateVerifier({ onSubmit, isLoading = false }: Candi
             </Button>
           </form>
 
-          {/* Sample JSON Format */}
           <div className="mt-6 p-4 bg-gray-50 rounded-lg">
             <h4 className="text-sm font-medium text-gray-700 mb-2">Sample JSON Format:</h4>
             <pre className="text-xs text-gray-600 overflow-x-auto">

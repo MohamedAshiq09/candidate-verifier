@@ -75,8 +75,7 @@ export default function AdditionalQuestions({ onComplete }: AdditionalQuestionsP
       ...prev,
       [field]: value
     }))
-    
-    // Clear error when user starts typing
+
     if (errors[field]) {
       setErrors(prev => ({
         ...prev,
@@ -128,7 +127,6 @@ export default function AdditionalQuestions({ onComplete }: AdditionalQuestionsP
     if (validateForm()) {
       onComplete(answers)
     } else {
-      // Find first error and navigate to that question
       const firstErrorIndex = questions.findIndex(q => 
         errors[q.id as keyof AdditionalAnswers]
       )
@@ -154,7 +152,6 @@ export default function AdditionalQuestions({ onComplete }: AdditionalQuestionsP
       </CardHeader>
       <CardContent>
         <div className="space-y-6">
-          {/* Progress Indicator */}
           <div className="flex justify-between items-center text-sm text-gray-500">
             <span>Question {currentQuestion + 1} of {questions.length}</span>
             <span>{Math.round(((currentQuestion + 1) / questions.length) * 100)}% Complete</span>
@@ -167,7 +164,6 @@ export default function AdditionalQuestions({ onComplete }: AdditionalQuestionsP
             ></div>
           </div>
 
-          {/* Current Question */}
           <div className="min-h-[200px] flex flex-col justify-center">
             <div className="text-center mb-6">
               <div className="inline-flex items-center justify-center w-12 h-12 bg-blue-100 rounded-full mb-4">
@@ -195,7 +191,6 @@ export default function AdditionalQuestions({ onComplete }: AdditionalQuestionsP
             </div>
           </div>
 
-          {/* Navigation Buttons */}
           <div className="flex justify-between pt-4">
             <Button 
               variant="outline" 
@@ -216,7 +211,6 @@ export default function AdditionalQuestions({ onComplete }: AdditionalQuestionsP
             )}
           </div>
 
-          {/* Question Overview */}
           <div className="border-t pt-4">
             <h4 className="text-sm font-medium text-gray-700 mb-3">Progress Overview</h4>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-2">

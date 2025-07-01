@@ -30,8 +30,7 @@ export default function Home() {
   const handleCandidateSubmit = async (data: CandidateData) => {
     setIsLoading(true)
     setCandidateData(data)
-    
-    // Simulate API delay
+
     await new Promise(resolve => setTimeout(resolve, 1000))
     
     setCurrentStep(1)
@@ -94,7 +93,6 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
       <div className="max-w-4xl mx-auto">
-        {/* Header */}
         <div className="text-center mb-8">
           <h1 className="text-4xl font-bold text-gray-900 mb-2">
             Candidate Verification System
@@ -104,7 +102,6 @@ export default function Home() {
           </p>
         </div>
 
-        {/* Progress Bar */}
         <Card className="mb-6">
           <CardContent className="pt-6">
             <div className="flex justify-between items-center mb-4">
@@ -138,12 +135,10 @@ export default function Home() {
           </CardContent>
         </Card>
 
-        {/* Main Content */}
         <div className="transition-all duration-300 ease-in-out">
           {getCurrentStepComponent()}
         </div>
 
-        {/* Footer */}
         <div className="text-center mt-8 text-gray-500 text-sm">
           <p>© 2025 Candidate Verification System. All rights reserved.</p>
         </div>
